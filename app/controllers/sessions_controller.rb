@@ -46,4 +46,10 @@ class SessionsController < ApplicationController
 	def begin_oauth_process
 		redirect_to('/auth/github')
 	end
+
+	def create
+	end
+
+	def failure
+	end
 end

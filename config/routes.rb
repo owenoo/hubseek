@@ -21,7 +21,11 @@ Rails.application.routes.draw do
   post '/github/search', :to => "github#search"
 
   # Omniauth
-  post '/auth/github/callback', to: 'sessions#create_github_session'
+  #post '/auth/:provider/callback', to: 'sessions#create_github_session'
+
+  #get  '/login', :to => 'sessions#new', :as => :login
+  post '/auth/:provider/callback', :to => 'sessions#create'
+  post '/auth/failure', :to => 'sessions#failure'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

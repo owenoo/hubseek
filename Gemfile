@@ -51,6 +51,7 @@ end
 #gem 'bcrypt-ruby', :require => 'bcrypt'
 #gem 'bcrypt-ruby', '~> 3.1.5', :require => 'bcrypt'
 gem "bcrypt-ruby", :require => "bcrypt"
-#gem 'omniauth-github', '~> 1.1.2'
+gem 'omniauth-github', '~> 1.1.2'
 gem 'omniauth', '~> 1.2.2'
 gem 'rest-client', '~> 1.7.2'
+gem 'pry'

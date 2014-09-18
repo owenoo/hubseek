@@ -1,7 +1,23 @@
-<h1>Sessions#home</h1>
-<p>Find me in app/views/sessions/home.html.erb</p>
-
-
 <% if flash[:notice] %>
 	<div class="notice"><%= flash[:notice] %></div>
 <% end %>
+
+<div id='search_panel'>
+	<h1>GitHub Search Tool</h1>
+	<p>Get a list of repositories detailed with ratings, descriptions, and programming language</p>
+	<br />
+	<form action="/github/search" id="search_form" method="post">	  
+	  <label for="search_string">Enter your search terms</label>:
+	  <input id="search_string" name="person[first_name]" type="text" />
+
+	  <br />
+	  <input name="submit_search" type="submit" value="Go" />
+	</form>
+</div>
+<br />
+<div id='results_panel'>
+<!--put results here-->
+</div>
+<div id='logout_panel'>
+<p><%= link_to "Logout", logout_path %></p>
+</div>

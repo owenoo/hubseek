@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'sessions/login'
   post 'sessions/login_attempt'
+  post 'sessions/begin_oauth_process'
   get 'sessions/home'
   get 'sessions/profile'
   get 'sessions/setting'
@@ -17,7 +18,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  
+  post '/github/search', :to => "github#search"
+
+  # Omniauth
+  match '/auth/github/callback', to: 'sessions#create_github_session'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

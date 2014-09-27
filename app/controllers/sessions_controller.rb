@@ -47,7 +47,7 @@ class SessionsController < ApplicationController
 		redirect_to('/auth/github')
 	end
 
-	def create
+	def create_old
 		@user = User.find_or_create_for_github(env["omniauth.auth"])
 		flash[:notice] = "Signed in with GitHub successfully."
 		sign_in_and_redirect @user, :event => :authentication
@@ -57,8 +57,10 @@ class SessionsController < ApplicationController
 	end
 
 	def create
+		#binding.pry
 		auth_hash = request.env['omniauth.auth'] 
   		render :text => auth_hash.inspect
+  		render :text => "All done!  - Owen", :layout => true
 	end
 
 	def failure

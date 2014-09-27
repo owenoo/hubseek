@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
 
-  root :to => "sessions#login"
-  get "signup", :to => "users#new"
-  get "login", :to => "sessions#login"
-  get "logout", :to => "sessions#logout"
-  get "home", :to => "sessions#home"
-  get "profile", :to => "sessions#profile"
-  get "setting", :to => "sessions#setting"
+  root :to => "sessions#new"
+  #get "signup", :to => "users#new"
+  #get "login", :to => "sessions#login"
+  #get "logout", :to => "sessions#logout"
+  #get "home", :to => "sessions#home"
+  #get "profile", :to => "sessions#profile"
+  #get "setting", :to => "sessions#setting"
 
-  get 'sessions/login'
-  post 'sessions/login_attempt'
-  post 'sessions/begin_oauth_process'
-  get 'sessions/home'
-  get 'sessions/profile'
-  get 'sessions/setting'
-  get 'users/new'
+  #get 'sessions/login'
+  #post 'sessions/login_attempt'
+  #post 'sessions/begin_oauth_process'
+  #get 'sessions/home'
+  #get 'sessions/profile'
+  #get 'sessions/setting'
+  #get 'users/new'
 
   resources :users
 
-  post '/github/search', :to => "github#search"
+  #post '/github/search', :to => "github#search"
 
   # Omniauth
   #post '/auth/:provider/callback', to: 'sessions#create_github_session'
@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   #get  '/login', :to => 'sessions#new', :as => :login
   post '/auth/:provider/callback', :to => 'sessions#create'
   post '/auth/failure', :to => 'sessions#failure'
+
+  #Redoing tutorials
+  get   '/login', :to => 'sessions#new', :as => :login
+  match '/auth/:provider/callback', :to => 'sessions#create', via: :get
+  match '/auth/failure', :to => 'sessions#failure', via: :get
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

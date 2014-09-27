@@ -53,6 +53,14 @@ class SessionsController < ApplicationController
 		sign_in_and_redirect @user, :event => :authentication
 	end
 
+	def new 
+	end
+
+	def create
+		auth_hash = request.env['omniauth.auth'] 
+  		render :text => auth_hash.inspect
+	end
+
 	def failure
 	end
 end

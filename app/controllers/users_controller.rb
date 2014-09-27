@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	#controller callbacks
-	before_filter :save_login_state, :only => [:new, :create]
+	#before_filter :save_login_state, :only => [:new, :create]
 
 	#methods
 	def user_params

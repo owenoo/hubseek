@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => "sessions#new"
+  #root :to => "sessions#new"
   #get "signup", :to => "users#new"
   #get "login", :to => "sessions#login"
   #get "logout", :to => "sessions#logout"
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   #get 'sessions/setting'
   #get 'users/new'
 
-  resources :users
+  #resources :users
+  #resources :sessions
 
   #post '/github/search', :to => "github#search"
 
@@ -28,10 +29,17 @@ Rails.application.routes.draw do
   #post '/auth/failure', :to => 'sessions#failure'
 
   #Redoing tutorials
-  get   '/login', :to => 'sessions#new', :as => :login
-  match '/auth/:provider/callback', :to => 'sessions#create', via: :get
-  match '/auth/github/callback', :to => 'sessions#create', via: :get
-  match '/auth/failure', :to => 'sessions#failure', via: :get
+  #root :to => "sessions#new"
+  #get   '/login', :to => 'sessions#new', :as => :login
+  #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
+  #match '/auth/github/callback', :to => 'sessions#create', via: :get
+  #match '/auth/failure', :to => 'sessions#failure', via: :get
+
+  #Natasha the Robot tutorial
+  root to: "users#new"
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
+  get "/sessions" => 'sessions#create', :as => :sessions
 
 
   # The priority is based upon order of creation: first created -> highest priority.

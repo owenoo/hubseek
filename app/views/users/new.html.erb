@@ -4,7 +4,7 @@
 
 <h2>Natasha the Robot Tutorial</h2>
 <% if current_user %>
-"Welcome #{current_user.name}"
+<%= "Welcome #{current_user.name}" %>
 <% else %>
 <%= link_to("Sign in with Github", "/auth/github") %>
 <% end %>

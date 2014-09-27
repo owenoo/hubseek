@@ -1,10 +1,32 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Github Search Tool</h1>
+
+<p>Implemented by owenoo @ github.com with <%= link_to "this tutorial", "http://natashatherobot.com/rails-omniauth-github-tutorial/" %></p>
+
+<br />
+
+<div>
+	<% if current_user %>
+	<%= "Welcome #{current_user.name}" %>
+	<br />
+	<%= link_to("Sign out", :signout) %>
+	<% else %>
+	<%= link_to("Sign in with Github", "/auth/github") %>
+	<% end %>
+</div>
 
 
-<h2>Natasha the Robot Tutorial</h2>
-<% if current_user %>
-<%= "Welcome #{current_user.name}" %>
-<% else %>
-<%= link_to("Sign in with Github", "/auth/github") %>
+<br / >
+<br / >
+<br / >
+<br / >
+
+<h1>Alternative Login with GitHub</h1>
+
+<%= form_tag({url: {action: "/auth/github"}}, method: "get") do |f| %>
+
+<button type="submit"></button>
+
 <% end %>
+
+<div id="ResultDiv">
+</div>

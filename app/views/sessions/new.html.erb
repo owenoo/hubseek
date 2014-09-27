@@ -1,6 +1,6 @@
 <h1>Login with GitHub</h1>
 
-<%= form_tag url: {action: "/auth/:provider/callback"} do |f| %>
+<%= form_tag url: {action: "/auth/github/callback"} do |f| %>
 	<%= 
 		button_tag(type: 'button') do
   		content_tag(:strong, 'Sign In')

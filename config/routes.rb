@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   #post '/auth/:provider/callback', to: 'sessions#create_github_session'
 
   #get  '/login', :to => 'sessions#new', :as => :login
-  post '/auth/:provider/callback', :to => 'sessions#create'
-  post '/auth/failure', :to => 'sessions#failure'
+  #post '/auth/:provider/callback', :to => 'sessions#create'
+  #post '/auth/failure', :to => 'sessions#failure'
 
   #Redoing tutorials
   get   '/login', :to => 'sessions#new', :as => :login

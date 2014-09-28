@@ -22,10 +22,8 @@
 
 <h1>Alternative Login with GitHub</h1>
 
-<%= form_tag({url: {action: "/auth/github"}}, method: "get") do |f| %>
-
-<button type="submit"></button>
-
+<%= form_tag("/auth/github", method: "get") do |f| %>
+<%= f.submit {:name => "githubSubmitButton"} %>
 <% end %>
 
 <div id="ResultDiv">

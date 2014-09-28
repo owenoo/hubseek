@@ -21,10 +21,12 @@
 <br / >
 
 <h1>Alternative Login with GitHub</h1>
-
-<%= form_tag("/auth/github", method: "get") do |f| %>
-<%= f.submit '', :class => 'githubSubmitButton'} %>
+<div>
+<%= form_tag("/auth/github", method: "get") do %>
+	<%= submit_tag '', :class => 'github-login-button' %>
 <% end %>
+</div>
+
 
 <div id="ResultDiv">
 </div>

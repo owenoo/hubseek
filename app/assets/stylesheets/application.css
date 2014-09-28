@@ -14,9 +14,16 @@
  *= require_self
  */
 
-button[type="submit"]
+button[type="submit"].github-login-button
 {
   background:url(SIWGH.png);
   height: 29px;
   width: 226px;
+}
+
+.github-login-button
+{
+	background:url(SIWGH.png);
+	height: 29px;
+	width: 226px;
 }

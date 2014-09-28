@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 		
 		if user && user.name
 			display_name = user.name
-		else if user && user.username
+		elsif user && user.username
 			display_name = user.username
 		end
 

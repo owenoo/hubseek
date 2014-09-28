@@ -29,6 +29,9 @@
 
 
 <div id="ResultDiv">
+	<% if flash[:authInfo] %>
+		<p><%= 'authInfo: ' + flash[:authInfo] %></p>
+	<% end %>
 </div>
 
 

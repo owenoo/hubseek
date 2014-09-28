@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-	attr_accessor display_name
+	attr_accessor :display_name
 
 	#Natasha the robot
 	def create     
@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
 		session[:user_id] = user.id     
 		
 		if user && user.name
-			display_name = user.name
+			@display_name = user.name
 		elsif user && user.username
-			display_name = user.username
+			@display_name = user.username
 		end
 
 		flash[:authInfo] = auth.to_json

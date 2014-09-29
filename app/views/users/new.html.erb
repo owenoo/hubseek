@@ -6,7 +6,7 @@
 
 <div>
 	<% if current_user %>
-	<%= "Welcome #{@display_name}" %>
+	<%= "Welcome #{self.display_name}" %>
 	<br />
 	<%= link_to("Sign out", :signout) %>
 	<% else %>

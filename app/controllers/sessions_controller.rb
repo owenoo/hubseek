@@ -9,9 +9,11 @@ class SessionsController < ApplicationController
 		session[:user_id] = user.id     
 		
 		if user && user.name
-			@display_name = user.name
+			self.display_name = user.name
 		elsif user && user.username
-			@display_name = user.username
+			self.display_name = user.username
+		else
+			self.display_name = '[Error: Name or username was empty]'
 		end
 
 		flash[:authInfo] = auth.to_json

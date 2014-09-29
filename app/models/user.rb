@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 			user.uid = auth["uid"]
 			user.name = auth["info"]["name"]
 			user.username = auth["info"]["nickname"]
+			binding.pry
 	    end
   	end
 end

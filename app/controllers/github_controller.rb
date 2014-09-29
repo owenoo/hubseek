@@ -1,3 +1,5 @@
+require 'json'
+
 class GithubController < ApplicationController
 
 	def search_github 
@@ -9,6 +11,10 @@ class GithubController < ApplicationController
 	end
 
 	def home
+
+		if request != nil
+			flash[:requestData] = JSON.parse(request.to_json)			
+		end
 
 	end
 

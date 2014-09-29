@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get "/sessions" => 'sessions#create', :as => :sessions
 
   get "/search" => 'github#home', :as => :search
-
+  get "/search/repositories/callback" => "github#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -17,5 +17,19 @@
 </div>
 <br /><br />
 <div>
-<p>Search stuff will go here</p>
+<p>Search form will go here</p>
+<%= form_tag("/search/repositories", method: "get") do %>	
+	<%= submit_tag 'Search'%>
+<% end %>
+</div>
+<br />
+<div id='search-results'>
+	<p>results here</p>	
+</div>
+
+<div>
+<p>Flash: </p>
+<% if flash[:requestData] %>
+	<%= flash[:requestData] %>
+<% end %>
 </div>

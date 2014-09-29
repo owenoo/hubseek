@@ -25,5 +25,7 @@ class GithubController < ApplicationController
 
 		flash[:response_str] = JSON.parse(response)
 		binding.pry
+
+		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
 	end
 end

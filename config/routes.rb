@@ -43,6 +43,7 @@ Rails.application.routes.draw do
 
   get "/search" => 'github#home', :as => :search
   get "/search/repositories/callback" => "github#home"
+  get "/search_github_repo_basic" => 'github#basic_search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

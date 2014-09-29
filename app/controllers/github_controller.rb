@@ -19,7 +19,7 @@ class GithubController < ApplicationController
 	end
 
 	def basic_search
-
+		binding.pry
 		response = RestClient.get '/search/repositories', {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 
 		flash[:response_str] = response.to_str

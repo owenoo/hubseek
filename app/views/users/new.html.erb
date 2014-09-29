@@ -6,6 +6,7 @@
 
 <div>
 	<% if current_user %>
+	<% binding.pry %>
 	<%= "Welcome #{@display_name}" %>
 	<br />
 	<%= link_to("Sign out", :signout) %>

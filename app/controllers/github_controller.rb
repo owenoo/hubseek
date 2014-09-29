@@ -23,7 +23,7 @@ class GithubController < ApplicationController
 		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=100' 
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 
-		flash[:response_str] = JSON.parse(response)
+		flash[:responseData] = JSON.parse(response)
 		binding.pry
 
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 

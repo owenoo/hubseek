@@ -13,8 +13,8 @@ class GithubController < ApplicationController
 
 	def home
 		binding.pry
-		if request != nil
-			flash[:requestData] = JSON.parse(request.env.to_json)			
+		if response != nil
+			flash[:responseData] = JSON.parse(response.to_json)			
 		end
 	end
 

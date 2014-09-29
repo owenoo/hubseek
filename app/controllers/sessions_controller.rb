@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
 		
 		binding.pry
 
-		if user && user.name
+		if user && !(user.name.empty?)
 			@display_name = user.name
-		elsif user && user.username
+		elsif user && !(user.username.empty?)
 			@display_name = user.username
 		else
 			@display_name = '[Error: Name or username was empty]'

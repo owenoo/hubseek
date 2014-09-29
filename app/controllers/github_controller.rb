@@ -19,8 +19,8 @@ class GithubController < ApplicationController
 	end
 
 	def basic_search
-		binding.pry
-		response = RestClient.get 'https://api.github.com/search/repositories' 
+		
+		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=100' 
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 
 		flash[:response_str] = JSON.parse(response)

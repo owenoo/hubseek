@@ -1,0 +1,21 @@
+<h1>Search</h1>
+<br />
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<br />
+	<br />
+<% end %>
+
+<div>
+	<% if current_user %>	
+	<%= "Welcome #{session[:display_name]}" %>
+	<br />
+	<%= link_to("Sign out", :signout) %>
+	<% else %>
+	<%= link_to("Sign in with Github", "/auth/github") %>
+	<% end %>
+</div>
+<br /><br />
+<div>
+<p>Search stuff will go here</p>
+</div>

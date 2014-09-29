@@ -5,9 +5,8 @@
 <br />
 
 <div>
-	<% if current_user %>
-	<% binding.pry %>
-	<%= "Welcome #{current_user.username}" %>
+	<% if current_user %>	
+	<%= "Welcome #{session[:display_name]}" %>
 	<br />
 	<%= link_to("Sign out", :signout) %>
 	<% else %>

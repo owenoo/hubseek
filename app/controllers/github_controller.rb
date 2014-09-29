@@ -7,4 +7,8 @@ class GithubController < ApplicationController
 
 	end
 
+	def home
+		
+	end
+
 end

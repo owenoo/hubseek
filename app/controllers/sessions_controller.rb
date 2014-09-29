@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
 		end
 
 		flash[:authInfo] = auth.to_json
+		
+		binding.pry
+
 		redirect_to root_url, :notice => "Signed in!"
 	end
  

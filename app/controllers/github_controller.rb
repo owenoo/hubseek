@@ -28,4 +28,13 @@ class GithubController < ApplicationController
 
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
 	end
+
+	def debug_getdata
+
+		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=100' 
+		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
+
+		JSON.parse(response)
+
+	end
 end

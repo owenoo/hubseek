@@ -24,8 +24,8 @@ class GithubController < ApplicationController
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 
 		flash[:responseData] = JSON.parse(response)
-		binding.pry
-
+		flash[:firstHit] = flash[:responseData]["items"][0]
+		
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
 	end
 
@@ -37,4 +37,12 @@ class GithubController < ApplicationController
 		JSON.parse(response)
 
 	end
+
+=begin
+
+	* Objectives right now..
+	After launching a query, display the first entry on the screen as html
+
+=end
+
 end

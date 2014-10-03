@@ -29,7 +29,15 @@
 
 <div>
 <p>Flash: </p>
-<% if flash[:response_str] %>
-	<%= flash[:response_str] %>
+<% if flash[:responseData] %>
+	<%= flash[:responseData] %>
+<% end %>
+</div>
+<br />
+<div>
+<p>1st result: </p>
+<% if flash[:firstHit] %>
+	<p>data ----</p><br />
+	<%= flash[:firstHit] %>
 <% end %>
 </div>

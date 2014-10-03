@@ -41,3 +41,10 @@
 	<%= flash[:firstHit] %>
 <% end %>
 </div>
+<br /><br />
+<div>
+<p>1st result AS JSON: </p>
+<% if flash[:firstHit] %>	
+	<%= flash[:firstHit].to_json %>
+<% end %>
+</div>

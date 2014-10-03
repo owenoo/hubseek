@@ -64,7 +64,7 @@ class GithubController < ApplicationController
 
 	end
 
-	def display_all(collection)
+	def self.display_all(collection)
 		content_tag(:ul, :class => "list") do
 			collection.collect do |member|
 				content_tag(:li, :id => member.name.gsub(' ', '-').downcase.strip) do

@@ -45,10 +45,10 @@ class GithubController < ApplicationController
 		
 		items.each do |item_hash|
 			elem = {}
-			elem.id = item_hash["id"]
-			elem.name = item_hash["name"]
-			elem.url = item_hash["url"]
-			elem.score = item_hash["score"]
+			elem["id"] = item_hash["id"]
+			elem["name"] = item_hash["name"]
+			elem["url"] = item_hash["url"]
+			elem["score"] = item_hash["score"]
 			result.push(elem)
 		end
 
@@ -73,12 +73,4 @@ class GithubController < ApplicationController
 	    	end
 	  	end
 	end
-
-=begin
-
-	* Objectives right now..
-	After launching a query, display the first entry on the screen as html
-
-=end
-
 end

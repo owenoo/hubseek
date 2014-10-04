@@ -26,7 +26,13 @@
 <div id='search-results'>
 	<p>Showing ? results out of ?</p>	
 	<br />	
-	<%= display_all(@search_result) %>
+	<%= content_tag(:ul, :class => "list") do %>
+	<%		collection.collect do |member|    %>
+	<%=			content_tag(:li, :id => member.name.gsub(' ', '-').downcase.strip) do %>
+	<%=				member.name  %>
+	<%			end %>
+	<%   	end %>
+	<%  end %>
 </div>
 
 <div>

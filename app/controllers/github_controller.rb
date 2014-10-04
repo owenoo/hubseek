@@ -51,7 +51,7 @@ class GithubController < ApplicationController
 			elem["score"] = item_hash["score"]
 			result.push(elem)
 		end
-
+		binding.pry
 		return result
 	end
 
@@ -62,6 +62,11 @@ class GithubController < ApplicationController
 
 		JSON.parse(response)
 
+	end
+
+	def helloworld
+		"Hello World"
+		binding.pry
 	end
 
 	def self.display_all(collection)

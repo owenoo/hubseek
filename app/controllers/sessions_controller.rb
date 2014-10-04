@@ -24,4 +24,8 @@ class SessionsController < ApplicationController
 		session[:display_name] = nil
 		redirect_to root_url, :notice => "Signed out!"
 	end
+
+	def sessionhello
+		"I'm still using session controller scope!!"
+	end
 end

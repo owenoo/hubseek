@@ -69,7 +69,7 @@ class GithubController < ApplicationController
 		binding.pry
 	end
 
-	def self.display_all(collection)
+	def display_all(collection)
 		content_tag(:ul, :class => "list") do
 			collection.collect do |member|
 				content_tag(:li, :id => member.name.gsub(' ', '-').downcase.strip) do
@@ -78,4 +78,6 @@ class GithubController < ApplicationController
 	    	end
 	  	end
 	end
+
+	helper_method :display_all
 end

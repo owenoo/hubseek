@@ -14,8 +14,8 @@ class GithubController < ApplicationController
 	end
 
 	def home
-
-		if @search_result.all? &:blank?
+		binding.pry
+		if @search_result.blank?
 			@search_result = [{"default" => "empty"}]
 		end
 		#binding.pry

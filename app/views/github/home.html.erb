@@ -31,7 +31,7 @@
 		<%= content_tag(:ul, :class => "list") do %>
 		<%		flash[:search_result].collect do |member|    %>
 		<%=			content_tag(:li, :id => member["id"]) do %>
-		<%=				member["id"] + " " + member["name"] + "; Score: " + member["score"] + " ; url: " + member["url"]  %>
+		<%=				member["id"] + " " + member["name"] + "; Score: " + member["score"].to_s + " ; url: " + member["url"].to_s  %>
 		<%=				member["default"]  %>
 		<%			end %>
 		<%   	end %>

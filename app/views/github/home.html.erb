@@ -27,7 +27,7 @@
 	<p>Showing ? results out of ?</p>	
 	<br />	
 	<%= content_tag(:ul, :class => "list") do %>
-	<%		collection.collect do |member|    %>
+	<%		@search_result.collect do |member|    %>
 	<%=			content_tag(:li, :id => member.name.gsub(' ', '-').downcase.strip) do %>
 	<%=				member.name  %>
 	<%			end %>

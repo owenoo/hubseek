@@ -32,11 +32,8 @@ class GithubController < ApplicationController
 
 		flash[:responseData] = hash_response
 		flash[:firstHit] = hash_response["items"][0]		
-
-
-
-
 		
+		binding.pry
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
 	end
 

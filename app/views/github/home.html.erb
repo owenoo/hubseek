@@ -31,6 +31,7 @@
 	<%		@search_result.collect do |member|    %>
 	<%=			content_tag(:li, :id => member["id"]) do %>
 	<%=				member["name"]  %>
+	<%=				member["default"]  %>
 	<%			end %>
 	<%   	end %>
 	<%  end %>

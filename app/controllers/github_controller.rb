@@ -15,7 +15,8 @@ class GithubController < ApplicationController
 
 	def home
 
-		@search_result ||= [{"default" => "empty"}]
+		if @search_result.empty?
+			@search_result = [{"default" => "empty"}]
 		#binding.pry
 		#if response != nil
 		#	flash[:responseData] = JSON.parse(response.to_json)			

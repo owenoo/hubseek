@@ -24,18 +24,20 @@
 </div>
 <br />
 <div id='search-results'>
-	<p>Showing ? results out of ?</p>	
-	<br />	
-	<% binding.pry %>
-	<%= content_tag(:ul, :class => "list") do %>
-	<%		@search_result.collect do |member|    %>
-	<%=			content_tag(:li, :id => member["id"]) do %>
-	<%=				member["name"]  %>
-	<%=				member["default"]  %>
-	<%			end %>
-	<%   	end %>
-	<%  end %>
-	<% binding.pry %>
+	<% if flash[:search_result] %>
+		<p>Showing ? results out of ?</p>	
+		<br />	
+		<% binding.pry %>
+		<%= content_tag(:ul, :class => "list") do %>
+		<%		flash[:search_result].collect do |member|    %>
+		<%=			content_tag(:li, :id => member["id"]) do %>
+		<%=				member["name"]  %>
+		<%=				member["default"]  %>
+		<%			end %>
+		<%   	end %>
+		<%  end %>
+		<% binding.pry %>
+	<% end %>
 </div>
 
 <div>

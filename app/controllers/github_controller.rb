@@ -36,6 +36,7 @@ class GithubController < ApplicationController
 
 		flash[:responseData] = hash_response
 		flash[:firstHit] = hash_response["items"][0]		
+		flash[:search_result] = @search_result
 		
 		binding.pry
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
@@ -81,6 +82,12 @@ class GithubController < ApplicationController
 	    	end
 	  	end
 	end
+
+	private
+  	
+  	def search_result_params
+    	params.require(:search_results).permit!
+  	end
 
 	helper_method :display_all
 end

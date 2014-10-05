@@ -28,8 +28,8 @@
 	<br />	
 	<%= content_tag(:ul, :class => "list") do %>
 	<%		@search_result.collect do |member|    %>
-	<%=			content_tag(:li, :id => member.name.gsub(' ', '-').downcase.strip) do %>
-	<%=				member.name  %>
+	<%=			content_tag(:li, :id => member["id"]) do %>
+	<%=				member["name"]  %>
 	<%			end %>
 	<%   	end %>
 	<%  end %>

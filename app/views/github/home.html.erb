@@ -25,19 +25,28 @@
 <br />
 <div id='search-results'>
 	<% if flash[:search_result] %>
-		<p>Showing ? results out of ?</p>	
-		<br />	
-		<% binding.pry %>
-		<%= content_tag(:ul, :class => "list") do %>
-		<%		flash[:search_result].collect do |member|    %>
-		<%=			content_tag(:li, :id => member["id"]) do %>
-		<%=				member["id"].to_s + " " + member["name"] + "; Score: " + member["score"].to_s + " ; url: " + member["url"].to_s  %>
-		<%=				member["default"]  %>
-		<%			end %>
-		<%   	end %>
-		<%  end %>
-		<% binding.pry %>
+	<p>Showing <%= :search_result.count %> results out of ?</p>	
+	<table>
+		<tr>
+			<th>Github Id</th>
+			<th>Name</th>
+			<th>Programming Language</th>
+			<th>Score</th>
+			<th>Url</th>
+		</tr>
+
+		<% flash[:search_result].each do |row| %>
+		<tr>
+			<td><%= row["id"].to_s %></td>
+			<td><%= row["name"] %></td>
+			<td><%= row["language"] %></td>
+			<td><%= row["score"] %></td>	     
+			<td><%= row["url"] %></td>			 
+		</tr>
+		<% end %>
+	</table>
 	<% end %>
+	<% binding.pry %>	
 </div>
 
 <div>

@@ -51,6 +51,7 @@ class GithubController < ApplicationController
 			elem = {}
 			elem["id"] = item_hash["id"]
 			elem["name"] = item_hash["name"]
+			elem["language"] = item_hash["language"]
 			elem["url"] = item_hash["url"]
 			elem["score"] = item_hash["score"]
 			result.push(elem)

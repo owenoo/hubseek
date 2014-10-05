@@ -4,6 +4,8 @@ require 'rest_client'
 
 class GithubController < ApplicationController
 
+	attr_accessor :search_result
+
 	def search_github 
 		binding.pry
 		x = GithubClient.new

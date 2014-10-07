@@ -26,6 +26,8 @@ class GithubController < ApplicationController
 
 	def basic_search
 		
+		#stars:10..20 size:<1000
+
 		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=20' 
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 

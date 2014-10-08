@@ -51,6 +51,7 @@ class GithubController < ApplicationController
 			argument_list.push(sorting)
 		end
 
+		binding.pry
 		rest_path = search_url + '?' + argument_list.join('&') #.map(&:inspect).join('&')
 
 		#url = 'https://api.github.com/search/repositories'

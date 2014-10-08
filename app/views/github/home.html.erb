@@ -54,8 +54,8 @@
 
 <div>
 <p>Flash: </p>
-<% if flash[:responseData] %>
-	<%= flash[:responseData] %>
+<% if flash[:last_query] %>
+	<%= flash[:last_query] %>
 <% end %>
 </div>
 <br />

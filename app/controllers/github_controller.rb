@@ -36,7 +36,7 @@ class GithubController < ApplicationController
 			argument_list.push('query=' + query)
 		end
 
-		language = 'Go'
+		language = 'C#'
 		if !language.nil?
 			argument_list.push('language=' + language)
 		end
@@ -66,6 +66,7 @@ class GithubController < ApplicationController
 		@search_result = map_items(items)
 		#flash[:htmlGithubList] = display_all(list)
 
+		flash[:last_query] = rest_path
 		flash[:responseData] = hash_response
 		flash[:firstHit] = hash_response["items"][0]		
 		flash[:search_result] = @search_result

@@ -28,8 +28,10 @@ class GithubController < ApplicationController
 		
 		#stars:10..20 size:<1000
 
-		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=20' 
+		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=20&sort=stars&order=desc' 
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
+		#   "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
+
 
 		hash_response = JSON.parse(response)
 		items = hash_response["items"]
@@ -44,8 +46,7 @@ class GithubController < ApplicationController
 		redirect_to url_for(:controller => 'github', :action => 'home'), :notice => "Search complete." 
 	end
 
-	def map_items (items)
-		#testing ssh 1
+	def map_items (items)		
 		# items = [ {},{}, ... , {} ]
 		result = []
 		
@@ -56,6 +57,8 @@ class GithubController < ApplicationController
 			elem["language"] = item_hash["language"]
 			elem["url"] = item_hash["url"]
 			elem["score"] = item_hash["score"]
+			elem["stargazers_count"] = item_hash["stargazers_count"]
+			elem["watchers_count"] = item_hash["watchers_count"]
 			result.push(elem)
 		end
 		binding.pry

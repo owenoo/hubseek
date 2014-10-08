@@ -45,7 +45,7 @@ class GithubController < ApplicationController
 	end
 
 	def map_items (items)
-
+		#testing ssh 1
 		# items = [ {},{}, ... , {} ]
 		result = []
 		

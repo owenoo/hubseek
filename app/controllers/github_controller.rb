@@ -33,7 +33,7 @@ class GithubController < ApplicationController
 
 		query = 'Game'
 		if !query.nil?
-			argument_list.push('query=' + query)
+			argument_list.push('q=' + query)
 		end
 
 		language = 'C#'

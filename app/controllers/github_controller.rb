@@ -26,9 +26,36 @@ class GithubController < ApplicationController
 
 	def basic_search
 		
+		#["10", "20", "50","99"].map(&:inspect).join(', ')
 		#stars:10..20 size:<1000
+		search_url = 'https://api.github.com/search/repositories'
+		arument_list = []		
 
-		response = RestClient.get 'https://api.github.com/search/repositories?q=game&page=1&per_page=20&sort=stars&order=desc' 
+		query = 'Game'
+		if !query.nil?
+			arument_list.push('query=' + query)
+		end
+
+		language = 'Go'
+		if !language.nil?
+			arument_list.push('language=' + language)
+		end
+
+		pagination = 'page=1&per_page=20'
+		if !pagination.nil?
+			arument_list.push(pagination)
+		end
+
+		sorting = 'sort=stars&order=desc'
+		if !sorting.nil?
+			arument_list.push(sorting)
+		end
+
+		rest_path = search_url + '?' + argument_list.map(&:inspect).join('&')
+
+		#url = 'https://api.github.com/search/repositories'
+
+		response = RestClient.get rest_path
 		#, {:params => {:q => tetris, 'language' => 'assembly', :sort => 'star', :order => 'desc'}}
 		#   "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
 
@@ -57,8 +84,7 @@ class GithubController < ApplicationController
 			elem["language"] = item_hash["language"]
 			elem["url"] = item_hash["url"]
 			elem["score"] = item_hash["score"]
-			elem["stargazers_count"] = item_hash["stargazers_count"]
-			elem["watchers_count"] = item_hash["watchers_count"]
+			elem["stargazers_count"] = item_hash["stargazers_count"]			
 			result.push(elem)
 		end
 		binding.pry
